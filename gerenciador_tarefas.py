@@ -10,7 +10,8 @@ lista_de_tarefas: list[dict[str]] = [
 ]
 
 
-def adicionar_tarefa(prioridade: bool, tarefa: str):
+def adicionar_tarefa(prioridade: bool, texto: str):
+    
     """
     Adiciona uma tarefa na lista de tarefas
     Lança exceções caso a prioridade seja inválida ou a tarefa já exista
@@ -19,11 +20,18 @@ def adicionar_tarefa(prioridade: bool, tarefa: str):
         prioridade (bool): True se a tarefa tem prioridade alta, False caso contrário
         tarefa (str): string que representa a tarefa
     """
-    # TODO: coloque o código aqui para adicionar um tarefa na lista
+    # TODO: coloque o código aqui para adicionar um tarefa na lista]
+    atividade = {"prioridade": prioridade, "tarefa": texto}
     # Caso a prioridade não seja True ou False, levante uma exceção
     # do tipo ValueError com a mensagem "Prioridade inválida"
+    if prioridade != True and prioridade != False:
+        raise ValueError("Prioridade inválida")
+        
     # Caso a tarefa já exista na lista, levante uma exceção do tipo ValueError
     # com a mensagem "Tarefa já existe"
+    
+
+    lista_de_tarefas.append(atividade)
     raise NotImplementedError("Adicionar tarefas não implementado")
 
 
