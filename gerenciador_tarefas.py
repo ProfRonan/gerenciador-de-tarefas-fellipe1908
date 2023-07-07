@@ -41,18 +41,18 @@ def encontra_tarefa(tarefa: str) -> int:
 
 
 def ordena_por_prioridade():
-  c_priori =[]
-  s_priori = []
+  com_prioridade =[]
+  sem_prioridade = []
   global lista_de_tarefas
   for i in lista_de_tarefas:
     if i['prioridade'] == True:
-        c_priori.append(i)
+        com_prioridade.append(i)
     elif i['prioridade']== False:
-        s_priori.append(i)
+        sem_prioridade.append(i)
     
-    cp = sorted(c_priori, key=lambda d:d['texto'])
-    sp = sorted(s_priori, key=lambda d:d['texto'])
-    lista_de_tarefas= cp+sp
+    a = sorted(com_prioridade, key=lambda d:d['texto'])
+    b = sorted(sem_prioridade, key=lambda d:d['texto'])
+    lista_de_tarefas= a+b
     
 
 def ordenar_tarefas(lista_tarefas):
@@ -76,3 +76,4 @@ def get_lista_de_tarefas():
         prioridade = tarefa["prioridade"]
         textos.append(f"{'*' if prioridade else ' '} {texto}")
     return tuple(textos)
+    
