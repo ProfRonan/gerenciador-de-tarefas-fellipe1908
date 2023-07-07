@@ -2,13 +2,13 @@
 Modulo que implementa um gerenciador de tarefas
 """
 
+Tarefa = dict[str, bool | str]  # dicionário que representa uma tarefa
 
-lista_de_tarefas: list[dict[str]] = [
-    {"prioridade": True, "tarefa": "Estudar Python"},
-    {"prioridade": False, "tarefa": "Tomar banho"},
-    {"prioridade": False, "tarefa": "Assistir série"},
+lista_de_tarefas: list[Tarefa] = [
+    {"prioridade": True, "texto": "Estudar Python"},
+    {"prioridade": False, "texto": "Tomar banho"},
+    {"prioridade": False, "texto": "Assistir série"},
 ]
-
 
 def adicionar_tarefa(prioridade: bool, texto: str):
 
@@ -76,4 +76,3 @@ def get_lista_de_tarefas():
         prioridade = tarefa["prioridade"]
         textos.append(f"{'*' if prioridade else ' '} {texto}")
     return tuple(textos)
-    
